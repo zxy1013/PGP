@@ -110,7 +110,7 @@ int send(char *sendto,char *dest){
 	sock.recv_socket();
 
 	/* EHLO指令是必须首先发的，相当于和服务器说hello */
-	sock.send_socket("EHLO 1253141170@qq.com\r\n"); // 邮箱用户名
+	sock.send_socket("EHLO **************\r\n"); // 邮箱用户名
 	sock.recv_socket();
 
 	/* 发送 auth login 指令，告诉服务器要登录邮箱 */
@@ -118,12 +118,12 @@ int send(char *sendto,char *dest){
 	sock.recv_socket();
 
 	/* 发送经过了base64编码的用户名 */
-	sock.send_socket("MTI1MzE0MTE3MEBxcS5jb20=");
+	sock.send_socket("**************");
 	sock.send_socket("\r\n");
 	sock.recv_socket();
 
 	/* 经过base64编码后的用户密码 */
-	sock.send_socket("b2dlemZ4Zmhjb2lkYmFjYQ==");
+	sock.send_socket("**************");
 	sock.send_socket("\r\n");
 	sock.recv_socket();
     
@@ -176,7 +176,7 @@ int encsend(char *sendto,char *buff,int group,int len,std::string loc){
 	sock.recv_socket();
 
 	/* EHLO指令是必须首先发的，相当于和服务器说hello */
-	sock.send_socket("EHLO 1253141170@qq.com\r\n"); // 邮箱用户名
+	sock.send_socket("EHLO ************\r\n"); // 邮箱用户名
 	sock.recv_socket();
 
 
@@ -185,12 +185,12 @@ int encsend(char *sendto,char *buff,int group,int len,std::string loc){
 	sock.recv_socket();
 	
 	/* 发送经过了base64编码的用户名 */
-	sock.send_socket("MTI1MzE0MTE3MEBxcS5jb20=");
+	sock.send_socket("************");
 	sock.send_socket("\r\n");
 	sock.recv_socket();
 	
 	/* 经过base64编码后的用户密码 */
-	sock.send_socket("b2dlemZ4Zmhjb2lkYmFjYQ==");
+	sock.send_socket("************");
 	sock.send_socket("\r\n");
 	sock.recv_socket();
 	
